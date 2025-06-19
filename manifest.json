@@ -1,0 +1,20 @@
+{
+    "name": "YouTube",
+    "short_name": "YouTube",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "https://www.google.com/s2/favicons?sz=192&domain=YouTube.com",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://www.google.com/s2/favicons?sz=512&domain=YouTube.com",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
