@@ -45,17 +45,30 @@
         <div id="message">正在檢查啟動方式…</div>
 
         <script>
+            function isIos() {
+                return /iphone|ipad|ipod/.test(
+                    navigator.userAgent.toLowerCase()
+                );
+            }
+
+            function isInStandaloneMode() {
+                return (
+                    "standalone" in window.navigator &&
+                    window.navigator.standalone
+                );
+            }
+
             window.onload = () => {
                 const msg = document.getElementById("message");
 
-                if (window.navigator.standalone) {
-                    // 如果是從主畫面開啟（Web App 模式）
+                if (isIos() && isInStandaloneMode()) {
+                    // iOS 主畫面啟動
                     msg.innerText = "正在開啟 YouTube…";
                     setTimeout(() => {
                         location.replace("https://m.youtube.com/");
                     }, 300);
                 } else {
-                    // 如果是從 Safari 開啟
+                    // 其他瀏覽器或 Safari 一般瀏覽器
                     msg.innerHTML = `
                         <p>請點選 Safari 下方的 <strong>分享按鈕</strong>（⬆️）</p>
                         <p>然後選擇「<strong>加入主畫面</strong>」</p>
