@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- PWA 必備設定 for iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- 圖示與標題 -->
+        <link
+            rel="apple-touch-icon"
+            href="https://www.google.com/s2/favicons?sz=180&domain=YouTube.com"
+        />
+        <link rel="manifest" href="manifest.json" />
+        <title>YouTube</title>
+
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #0f0f0f;
+                color: #f1f1f1;
+                font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+        </style>
+
+        <script>
+            // 延遲一點跳轉避免 Safari 閃畫面
+            window.onload = () => {
+                setTimeout(() => {
+                    location.replace("https://m.youtube.com/");
+                }, 200);
+            };
+        </script>
+    </head>
+    <body>
+        <div>正在開啟 YouTube 手機版…</div>
+    </body>
+</html>
