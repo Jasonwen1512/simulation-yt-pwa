@@ -60,6 +60,7 @@
 
             window.onload = () => {
                 const msg = document.getElementById("message");
+                const btn = document.getElementById("gotoBtn");
                 if (isIos() && isInStandaloneMode()) {
                     // 在 PWA 模式下顯示提示 + 按鈕（改為手動跳轉）
                     msg.innerText = "點擊下方按鈕開啟 YouTube";
