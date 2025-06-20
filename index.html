@@ -68,7 +68,9 @@
 
                     // ✅ 若要改回自動跳轉，可解除下方註解
                     setTimeout(() => {
-                        location.replace("https://www.youtube.com");
+                        location.replace(
+                            "https://www.youtube.com/?app=desktop"
+                        );
                     }, 300);
                 } else {
                     // 其他瀏覽器或 Safari 一般瀏覽器
@@ -80,7 +82,8 @@
                 }
                 // 手動跳轉按鈕
                 btn.addEventListener("click", () => {
-                    window.location.href = "https://www.youtube.com";
+                    window.location.href =
+                        "https://www.youtube.com/?app=desktop";
                 });
             };
         </script>
