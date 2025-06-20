@@ -29,7 +29,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                /* height: 100vh; */
+                height: 100vh;
             }
         </style>
 
@@ -44,30 +44,31 @@
     </head>
     <body>
         <div id="message">正在檢查啟動方式…</div>
-
+        <button id="gotoBtn" style="display: none">👉 手動開啟 YouTube</button>
         <script>
-            function isIos() {
+            const isIos = () => {
                 return /iphone|ipad|ipod/.test(
                     navigator.userAgent.toLowerCase()
                 );
-            }
-
-            function isInStandaloneMode() {
+            };
+            const isInStandaloneMode = () => {
                 return (
                     "standalone" in window.navigator &&
                     window.navigator.standalone
                 );
-            }
+            };
 
             window.onload = () => {
                 const msg = document.getElementById("message");
-
                 if (isIos() && isInStandaloneMode()) {
-                    // iOS 主畫面啟動
-                    msg.innerText = "正在開啟 YouTube…";
-                    setTimeout(() => {
-                        location.replace("https://m.youtube.com/");
-                    }, 300);
+                    // 在 PWA 模式下顯示提示 + 按鈕（改為手動跳轉）
+                    msg.innerText = "點擊下方按鈕開啟 YouTube";
+                    btn.style.display = "inline-block";
+
+                    // ✅ 若要改回自動跳轉，可解除下方註解
+                    // setTimeout(() => {
+                    //     location.replace("https://m.youtube.com/");
+                    // }, 300);
                 } else {
                     // 其他瀏覽器或 Safari 一般瀏覽器
                     msg.innerHTML = `
